@@ -297,5 +297,31 @@ function checkIfLogged(){
   }
 }
 
+// Button function to show password during login or register proccess
+function showPassword(id,i){
+  let input = document.getElementById(id);
+  let buttons = document.getElementsByClassName("btn-show-password");
+  input.type === "text" ? input.type = "password" : input.type = "text";
+  if (i === 1) {
+    if (bool1 === 0) {
+      buttons[0].style.backgroundImage = "url('img/vectors/eye-slash-regular.svg')";
+      bool1 = 1;
+    }
+    else {
+      buttons[0].style.backgroundImage = "url('img/vectors/eye-regular.svg')";
+      bool1 = 0;
+    }
+  }
+  if (i === 2) {
+    if (bool2 === 0) {
+      buttons[1].style.backgroundImage = "url('img/vectors/eye-slash-regular.svg')";
+      bool2 = 1;
+    }
+    else {
+      buttons[1].style.backgroundImage = "url('img/vectors/eye-regular.svg')";
+      bool2 = 0;
+    }
+  }
+}
 
 

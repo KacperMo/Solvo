@@ -29,6 +29,22 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+	<style>
+		.btn-show-password{
+			position: absolute;
+			transform: translate(0,-100%);
+			right: 0;
+			border: none;
+			opacity: .6;
+			margin-right: 30px;
+			background-image: url("img/vectors/eye-regular.svg");
+			background-color: transparent;
+			background-repeat: no-repeat;
+			height: 30px;
+			width: 30px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 
 <body>
@@ -88,11 +104,13 @@
 						</div>
 						<div class="form-group">
 							<label for="pass">Hasło</label>
-							<input pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title ="Hasło musi mieć przynajmniej 8 znaków, zawierać przynajmniej jedną dużą i małą literę oraz jedną cyfrę"type="password" class="form-control" id="password" required>
+								<input pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title ="Hasło musi mieć przynajmniej 8 znaków, zawierać przynajmniej jedną dużą i małą literę oraz jedną cyfrę" type="password" class="form-control" id="password" required>
+								<button class="btn-show-password" onclick="showPassword('password',1)"></button>
 						</div>
 						<div class="form-group">
 							<label for="pass_repeat">Powtórz hasło</label>
 							<input type="password" class="form-control" id="confirm_password" required>
+							<button class="btn-show-password" onclick="showPassword('confirm_password',2)"></button>
 						</div>
 						<div class="form-group">
 							<label for="email">E-mail</label>
@@ -106,7 +124,7 @@
 							 <option value ="Uniwersytet Jagielloński w Krakowie">
 							 <option value ="Uniwersytet Warszawski">
 							 <option value ="Uniwersytet im. Adama Mickiewicza w Poznaniu">
-							 <option value ="Uniwersytet Pedagogiczny im. Komisji Edukacji Narodowej w Krakowie">							 
+							 <option value ="Uniwersytet Pedagogiczny im. Komisji Edukacji Narodowej w Krakowie">
 							 </datalist>
 						</div>
 						<div class="form-group">
@@ -117,12 +135,11 @@
 							 <option value ="Ekonomia">
 							 <option value ="Turystyka">
 							 <option value ="Matematyka">
-							 <option value ="Logistyka">							 
+							 <option value ="Logistyka">
 							 </datalist>
 						</div>
 					<input class= "ticker-btn" type = "submit" value = "Zarejestruj się"/>
 					</form>
-					
 				</div>
 			</div>
 		</div>
@@ -173,8 +190,11 @@
 	<script src="js/parallax.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
-        <script> var password = document.getElementById("password")
-            , confirm_password = document.getElementById("confirm_password");
+        <script>
+			var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm_password"),
+			bool1 = 0,
+			bool2 = 0;
 
              function validatePassword(){
                 if(password.value != confirm_password.value) {
@@ -182,11 +202,12 @@
               } else {
                    confirm_password.setCustomValidity('');
                  }
-               }
+            }
 
-                  password.onchange = validatePassword;
-                  confirm_password.onkeyup = validatePassword;
-                   </script>
+			password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+
+        	</script>
 </body>
 
 </html>
