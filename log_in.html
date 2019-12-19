@@ -29,6 +29,22 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+	<style>
+		.btn-show-password{
+			position: absolute;
+			transform: translate(0,-100%);
+			right: 0;
+			border: none;
+			opacity: .6;
+			margin-right: 30px;
+			background-image: url("img/vectors/eye-regular.svg");
+			background-color: transparent;
+			background-repeat: no-repeat;
+			height: 30px;
+			width: 30px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 
 <body>
@@ -91,12 +107,12 @@
 							<label for="exampleInputPassword1">Hasło</label>
 							<input type="password" class="form-control" 
 								name="pass"
-							    id="exampleInputPassword1" placeholder="Twoje Hasło" required>
+								id="exampleInputPassword1" placeholder="Twoje Hasło" required>
+							<button class="btn-show-password" onclick="showPassword('exampleInputPassword1',1)"></button>
 						</div>
 						<p>Nie masz konta? <a href="register.html">Zarejestruj się!</a></p>
 						<input type="submit" class="ticker-btn" value="Zaloguj się" >
 					</form>
-					
 				</div>
 			</div>
 		</div>
@@ -147,6 +163,10 @@
 	<script src="js/parallax.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
+
+	<script>
+	var bool1 = bool2 = 0;
+	</script>
 </body>
 
 </html>
